@@ -392,7 +392,8 @@ def main():
     print(f"  T1 Total: range={agg['t1']['Total']['range']}, current={agg['t1']['Total']['current']}")
     html = build_html(agg, t1_bud, t2_bud, cur_month)
     out_path = OUTPUT_HTML
-    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    d = os.path.dirname(out_path)
+    if d: os.makedirs(d, exist_ok=True)
     with open(out_path, 'w', encoding='utf-8') as f:
         f.write(html)
     print(f"✓ Wrote {out_path} ({len(html)} chars)")
