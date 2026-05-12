@@ -2,9 +2,8 @@ name: Build Dashboard
 
 on:
   schedule:
-    # 7:00 UTC = 8:00 in Madrid summer time (CEST) / 8:00 winter (CET) the UTC offset shifts but we use 7 to be roughly 8am Madrid most of year. 
-    # Adjust to '0 6 * * *' if you want consistent 8am Madrid winter time too.
-    - cron: '0 7 * * *'
+    # 01:47 UTC = 03:47 Madrid en verano (CEST) / 02:47 Madrid en invierno (CET). Hora rara + madrugada → GitHub Actions cumple casi siempre
+    - cron: '47 1 * * *'
   workflow_dispatch: {}  # allow manual trigger from GitHub UI
 
 permissions:
